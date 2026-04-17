@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplikacja Taco</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <form method="post" th:action="@{/orders}" th:object="${order}">
+        <h1>Zamów przygotowane taco!</h1>
+
+        <div class="image-container">
+            <img th:src="@{/images/taco.png}" alt="taco">
+        </div>
+        <a th:href="@{/design}" id="another">Przygotuj kolejne taco</a>
+
+        <h3>Adres dostarczania taco...</h3>
+        <label for="name">Imię i nazwisko: </label>
+        <input type="text" id="name" th:field="*{name}">
+        <span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        <br>
+        <label for="street">Ulica: </label>
+        <input type="text" id="street" th:field="*{street}">
+        <span class="error" th:if="${#fields.hasErrors('street')}" th:errors="*{street}"></span>
+        <br>
+        <label for="city">Miejscowość: </label>
+        <input type="text" id="city" th:field="*{city}">
+        <span class="error" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></span>
+        <br>
+        <label for="state">Województwo: </label>
+        <input type="text" id="state" th:field="*{state}">
+        <span class="error" th:if="${#fields.hasErrors('state')}" th:errors="*{state}"></span>
+        <br>
+        <label for="zip">Kod pocztowy: </label>
+        <input type="text" id="zip" th:field="*{zip}">
+        <span class="error" th:if="${#fields.hasErrors('zip')}" th:errors="*{zip}"></span>
+        <br>
+
+        <h3>Sposób płatności...</h3>
+        <label for="ccNumber">Numer karty kredytowej: </label>
+        <input type="text" id="ccNumber" th:field="*{ccNumber}">
+        <span class="error" th:if="${#fields.hasErrors('ccNumber')}" th:errors="*{ccNumber}"></span>
+        <br>
+        <label for="ccExpiration">Data ważności: </label>
+        <input type="text" id="ccExpiration" th:field="*{ccExpiration}">
+        <span class="error" th:if="${#fields.hasErrors('ccExpiration')}" th:errors="*{ccExpiration}"></span>
+        <br>
+        <label for="ccCVV">Kod CVV: </label>
+        <input type="text" id="ccCVV" th:field="*{ccCVV}">
+        <span class="error" th:if="${#fields.hasErrors('ccCVV')}" th:errors="*{ccCVV}"></span>
+        <br>
+
+        <input type="submit" value="Złóż zamówienie">
+    </form>
+
+</body>
+
+</html>

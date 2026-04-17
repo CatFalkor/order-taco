@@ -1,0 +1,9 @@
+.image-container img {
+  width: 100mm;
+  height: 100mm;
+}
+
+.error {
+    color: red;
+    font-size: 0.8rem;
+}

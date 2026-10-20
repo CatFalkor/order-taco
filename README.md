@@ -2,4 +2,4 @@
 
 System to order tacos
 
-./yourshell - zawiera skrypt powłoki do wyświetlania informacji o branch name (<branch>)
+./yourshell - zawiera skrypt powłoki do wyświetlania informacji o branch name (branch)
